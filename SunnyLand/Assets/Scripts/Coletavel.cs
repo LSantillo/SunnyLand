@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Coletavel : MonoBehaviour
 {
+    public ParticleSystem efeito;
+    public TMP_Text texto_pontuacao;
+    int points = 0;
     private int pontos = 5;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +25,10 @@ public class Coletavel : MonoBehaviour
     {
         if (other.CompareTag("Player")) {
             Debug.Log("Colidiu!");
+            other.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
+            Instantiate(efeito, transform.position, Quaternion.identity);
+            points++;
+            texto_pontuacao.text = "Pontos:" + points.ToString();
             Destroy(gameObject);
         }
     }
