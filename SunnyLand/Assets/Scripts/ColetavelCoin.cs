@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Coletavel : MonoBehaviour
+public class ColetavelCoin : MonoBehaviour
 {
     public ParticleSystem efeito;
     public GameManager gameManager;
